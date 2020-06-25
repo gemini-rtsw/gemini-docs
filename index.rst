@@ -25,4 +25,5 @@ Gemini Real-Time Controls Documentation
    howtos/EPICSInstall
    howtos/ADEInstall
    howtos/Docker
+   howtos/SvnToGit
    Read-The-Docs Quick Start <howtos/RTD-Quick-Start>
