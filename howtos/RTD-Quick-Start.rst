@@ -45,6 +45,7 @@ Compile rst locally (highly recommended)
  4. ``sphinx-build --version`` 
  5. On macOS only, add ``PATH="$HOME/Library/Python/2.7/bin:$PATH"`` to .bash_profile 
  6. ``make html`` in Gemini Docs repository home
+ 7. Your files will be in ``_build/html``
 
 Create a Read-The-Docs account (optional)
 -----------------------------------------
@@ -54,7 +55,6 @@ Create a Read-The-Docs account (optional)
  3. Click on `Sign up with GitHub`
  4. Click on `Import a Project`
  5. From your main page you can click on a project to access the admin page  
- 6. Your files will be in ``_build/html``
  
 
 Additional Info
