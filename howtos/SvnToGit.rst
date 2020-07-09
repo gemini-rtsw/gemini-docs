@@ -15,8 +15,8 @@ Software Requirements
 ---------------------
 Operating System
 ^^^^^^^^^^^^^^^^
-The following procedure assumes CentOS7 as operating system for the migration steps. Principally, things should be working 
-with other linux distributions or even operating systems as well, but to prevent against svn or git version conflicts the 
+The following procedure assumes CentOS7 or CentOS8 as operating system for the migration steps. If commands differ for those distributions, both will be listed. Principally, things should be working 
+with other linux distributions or even operating systems similarly, but to prevent against svn or git version conflicts the 
 steps are taken under the mentioned one.
 
 git
@@ -126,7 +126,7 @@ There are two possibilities to create :code:`.gitignore`.
 
 Convert SVN-tag-branches to git tags
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The release names from subversion were migrated to :code:`tags/name`. The outcome of the preceding steps for this example looks like:
+The release names from subversion were migrated to :code:`tags/name`. The outcome of the preceding steps for this example looks like (slightly different for CentOS8):
 
 ::
 
@@ -153,7 +153,10 @@ The tags-branches need to be migrated to normal git tags. This is done in one st
 
 ::
 
+    #CentOS7
     git for-each-ref --format='%(refname)' refs/remotes/tags | cut -d / -f 4 | while read ref; do git tag -a "$ref" -m "Convert "$ref" to a proper git tag." "refs/remotes/tags/$ref"; git branch -r -D "tags/$ref"; done
+    #CentOS8
+    git for-each-ref --format='%(refname)' refs/remotes/origin/tags | cut -d / -f 5 | while read ref; do git tag -a "$ref" -m "Convert "$ref" to a proper git tag." "refs/remotes/origin/tags/$ref"; git branch -r -D "origin/tags/$ref"; done
 
 The outcome should look like:
 
@@ -186,10 +189,13 @@ Since :code:`trunk` was automatically migrated to master already by :code:`git s
 
 ::
 
+    #CentOS7
     git branch -r -d trunk
+    #CentOS8
+    git branch -r -d origin/trunk
 
 
-The outcome should look like:
+The outcome should look like (slightly different for CentOS8):
 
 ::
     
@@ -204,7 +210,10 @@ local git branches. This is done similar to the svn-git-branches conversion:
 
 ::
 
+    #CentOS7
     git for-each-ref --format='%(refname)' refs/remotes | cut -d / -f 3 | while read ref; do git branch --track "$ref" "$ref"; git branch -r -D "$ref"; done
+    #CentOS8
+    git for-each-ref --format='%(refname)' refs/remotes/origin | cut -d / -f 4 | while read ref; do git checkout -b "$ref" "remotes/origin/$ref"; git branch -r -D "origin/$ref"; done; git checkout master
 
 
 The outcome should look like:
