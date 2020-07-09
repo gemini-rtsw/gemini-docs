@@ -48,7 +48,7 @@ First, a authors file needs to be created from the svn commits:
 
 ::
   
-  svn log -q http://sbfsvn02/gemini-sw/gem/trunk/ioc/crcs/mk | awk -F '|' '/^r/ {sub("^ ", "", $2); sub(" $", "", $2); print $2" = "$2" <"$2">"}' | sort -u > authors.txt
+  svn log -q http://sbfsvn02/gemini-sw/gem/trunk | awk -F '|' '/^r/ {sub("^ ", "", $2); sub(" $", "", $2); print $2" = "$2" <"$2">"}' | sort -u > authors.txt
   
 This creates a file :code:`authors.txt` in the current directory and should be edited that it contains authors with their email adresses:
 
@@ -58,6 +58,8 @@ This creates a file :code:`authors.txt` in the current directory and should be e
   jeod = Jane Eod <jeod@example.com>
 
 This file can be used for all the other projects that need to be migrated, too. Missing users have to be added over time using this technique. 
+
+.. note:: This only needs to be done once. You can also find this file at the top level in Gemini's gitlab repository authors project.
 
 Find First Commit
 ^^^^^^^^^^^^^^^^^
