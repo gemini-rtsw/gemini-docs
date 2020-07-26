@@ -109,7 +109,7 @@ directory. Hence, the project specific paths need to be detailed with according 
 
 Create :code:`.gitignore` file(s)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-There are two possibilities to create :code:`.gitignore`.
+There are three possibilities to create :code:`.gitignore`.
 
 1. Recursively create a :code:`.gitignore` file in each subdirectory, where a :code:`svn:ignore` property is specified:
 
@@ -117,11 +117,17 @@ There are two possibilities to create :code:`.gitignore`.
     
     git svn create-ignore
 
-2. Create one :code:`.gitignore` file for the whole project:
+2. Create one :code:`.gitignore` file for the whole project from :code:`svn:ignore` property:
 
 ::
     
     git svn show-ignore > .gitignore
+    
+3. If the :code:`svn:ignore` property is not used but the :code:`.svnignore` file, just renmaoe it :code:`gitignore`:
+
+::
+
+    git mv .svnignore .gitignore
 
 
 Convert SVN-tag-branches to git tags
