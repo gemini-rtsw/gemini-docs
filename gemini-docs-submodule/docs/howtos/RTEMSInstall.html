@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing RTEMS &mdash; Gemini Documentation 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installing EPICS Base on the ADE" href="EPICSInstall.html" />
+    <link rel="prev" title="Code Tests" href="../code/code-index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Gemini Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Community Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://epics-controls.org">EPICS Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.epics-controls.org">EPICS Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Quick Start Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start/quick-start.html">Quick Start Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PDFs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pdfs/pdfs-index.html">PDF Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Wiki Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../wiki/wiki-index.html">Wiki Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">HTML Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../html/html-index.html">Html Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/other-index.html">Other Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code/code-index.html">Code Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Gemini HowTo's:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing RTEMS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#procedure">Procedure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisite-ade-base-directories">Prerequisite ADE base directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rtems-installation">RTEMS installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-cross-compiler-tool-chain">Install cross-compiler tool chain:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-rtems-4-10-2">Install RTEMS 4.10.2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-rtems-add-ons">Install RTEMS add-ons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-bsp-extensions-1-6">Install BSP Extensions 1.6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="EPICSInstall.html">Installing EPICS Base on the ADE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ADEInstall.html">Installing ADE Build Tools</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gemini Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Installing RTEMS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/howtos/RTEMSInstall.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installing-rtems">
+<h1>Installing RTEMS<a class="headerlink" href="#installing-rtems" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>These are the steps taken to set up a parallel Application Development
+Environment that is completely separate from our production ADE.</p>
+</div>
+<div class="section" id="procedure">
+<h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>ADE machine is sbfade or hbfade</p></li>
+<li><p>Confirm /gem_base directory</p></li>
+</ul>
+<div class="section" id="prerequisite-ade-base-directories">
+<h3>Prerequisite ADE base directories<a class="headerlink" href="#prerequisite-ade-base-directories" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">targetOS</span><span class="o">/</span><span class="n">RTEMS</span><span class="o">/</span><span class="n">source</span>
+<span class="n">sudo</span> <span class="n">groupadd</span> <span class="n">gembuild</span>
+<span class="n">sudo</span> <span class="n">chgrp</span> <span class="o">-</span><span class="n">R</span> <span class="n">gembuild</span> <span class="o">/</span><span class="n">gem_base</span>
+<span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="n">R</span> <span class="n">g</span><span class="o">+</span><span class="n">s</span> <span class="o">/</span><span class="n">gem_base</span>
+<span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="n">R</span> <span class="mi">775</span> <span class="o">/</span><span class="n">gem_base</span>
+<span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">G</span> <span class="n">gembuild</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Log out, then log back in to pick up the new group.</p>
+</div>
+<div class="section" id="rtems-installation">
+<h3>RTEMS installation<a class="headerlink" href="#rtems-installation" title="Permalink to this headline">¶</a></h3>
+<p>Make sure the following system packages are installed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">make</span> <span class="n">automake</span> <span class="n">autoconf</span> <span class="n">python3</span> <span class="n">python3</span><span class="o">-</span><span class="n">devel</span> <span class="n">bison</span> <span class="n">flex</span> <span class="n">gcc</span> <span class="n">gcc</span><span class="o">-</span><span class="n">c</span><span class="o">++</span> <span class="n">texinfo</span> <span class="n">patch</span> <span class="n">git</span> <span class="n">readline</span><span class="o">-</span><span class="n">devel</span> <span class="n">re2c</span> <span class="n">java</span>
+<span class="n">sudo</span> <span class="n">alternatives</span> <span class="o">--</span><span class="nb">set</span> <span class="n">python</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python3</span>
+</pre></div>
+</div>
+<div class="section" id="install-cross-compiler-tool-chain">
+<h4>Install cross-compiler tool chain:<a class="headerlink" href="#install-cross-compiler-tool-chain" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">targetOS</span><span class="o">/</span><span class="n">RTEMS</span><span class="o">/</span><span class="n">source</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="mf">4.10</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">git</span><span class="o">.</span><span class="n">rtems</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">rtems</span><span class="o">-</span><span class="n">source</span><span class="o">-</span><span class="n">builder</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">rtems</span><span class="o">-</span><span class="n">source</span><span class="o">-</span><span class="n">builder</span><span class="o">/</span><span class="n">rtems</span>
+<span class="o">../</span><span class="n">source</span><span class="o">-</span><span class="n">builder</span><span class="o">/</span><span class="n">sb</span><span class="o">-</span><span class="nb">set</span><span class="o">-</span><span class="n">builder</span> <span class="o">--</span><span class="n">log</span><span class="o">=</span><span class="n">l</span><span class="o">-</span><span class="n">powerpc</span><span class="o">.</span><span class="n">txt</span> <span class="o">--</span><span class="n">without</span><span class="o">-</span><span class="n">rtems</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">targetOS</span><span class="o">/</span><span class="n">RTEMS</span><span class="o">/</span><span class="n">rtems</span><span class="o">-</span><span class="mf">4.10</span> <span class="mf">4.10</span><span class="o">/</span><span class="n">rtems</span><span class="o">-</span><span class="n">powerpc</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-rtems-4-10-2">
+<h4>Install RTEMS 4.10.2<a class="headerlink" href="#install-rtems-4-10-2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=/gem_base/targetOS/RTEMS/rtems-4.10/bin:$PATH
+
+cd /gem_base/targetOS/RTEMS/source
+mkdir rtems
+cd rtems
+
+wget --passive-ftp --no-directories --retr-symlinks https://git.rtems.org/rtems/snapshot/rtems-4.10.2.tar.bz2
+tar xjvf rtems-4.10.2.tar.bz2
+
+cd /gem_base/targetOS/RTEMS/source/rtems/rtems-4.10.2
+./bootstrap
+mkdir build
+cd build
+../configure --target=powerpc-rtems4.10 --prefix=/gem_base/targetOS/RTEMS/rtems-4.10 --enable-cxx --enable-rdbg --disable-tests --enable-networking --enable-posix --enable-rtemsbsp=&quot;beatnik mvme2307 mvme3100 qemuppc&quot;
+
+make
+make install
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-rtems-add-ons">
+<h4>Install RTEMS add-ons<a class="headerlink" href="#install-rtems-add-ons" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">targetOS</span><span class="o">/</span><span class="n">RTEMS</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">rtems</span>
+
+<span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">rtems</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="n">rtems</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="mf">4.10</span><span class="o">/</span><span class="mf">4.10</span><span class="o">.</span><span class="mi">2</span><span class="o">/</span><span class="n">rtems</span><span class="o">-</span><span class="n">addon</span><span class="o">-</span><span class="n">packages</span><span class="o">-</span><span class="mf">4.10</span><span class="o">.</span><span class="mf">2.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+
+<span class="n">tar</span> <span class="n">xjvf</span> <span class="n">rtems</span><span class="o">-</span><span class="n">addon</span><span class="o">-</span><span class="n">packages</span><span class="o">-</span><span class="mf">4.10</span><span class="o">.</span><span class="mf">2.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="n">cd</span> <span class="n">rtems</span><span class="o">-</span><span class="n">addon</span><span class="o">-</span><span class="n">packages</span><span class="o">-</span><span class="mf">4.10</span><span class="o">.</span><span class="mi">2</span>
+
+<span class="n">export</span> <span class="n">RTEMS_MAKEFILE_PATH</span><span class="o">=/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">targetOS</span><span class="o">/</span><span class="n">RTEMS</span><span class="o">/</span><span class="n">rtems</span><span class="o">-</span><span class="mf">4.10</span><span class="o">/</span><span class="n">powerpc</span><span class="o">-</span><span class="n">rtems4</span><span class="o">.</span><span class="mi">10</span><span class="o">/</span><span class="n">beatnik</span>
+<span class="o">./</span><span class="n">bit</span>
+
+<span class="n">export</span> <span class="n">RTEMS_MAKEFILE_PATH</span><span class="o">=/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">targetOS</span><span class="o">/</span><span class="n">RTEMS</span><span class="o">/</span><span class="n">rtems</span><span class="o">-</span><span class="mf">4.10</span><span class="o">/</span><span class="n">powerpc</span><span class="o">-</span><span class="n">rtems4</span><span class="o">.</span><span class="mi">10</span><span class="o">/</span><span class="n">mvme2307</span>
+<span class="o">./</span><span class="n">bit</span>
+
+<span class="n">export</span> <span class="n">RTEMS_MAKEFILE_PATH</span><span class="o">=/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">targetOS</span><span class="o">/</span><span class="n">RTEMS</span><span class="o">/</span><span class="n">rtems</span><span class="o">-</span><span class="mf">4.10</span><span class="o">/</span><span class="n">powerpc</span><span class="o">-</span><span class="n">rtems4</span><span class="o">.</span><span class="mi">10</span><span class="o">/</span><span class="n">mvme3100</span>
+<span class="o">./</span><span class="n">bit</span>
+
+<span class="n">export</span> <span class="n">RTEMS_MAKEFILE_PATH</span><span class="o">=/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">targetOS</span><span class="o">/</span><span class="n">RTEMS</span><span class="o">/</span><span class="n">rtems</span><span class="o">-</span><span class="mf">4.10</span><span class="o">/</span><span class="n">powerpc</span><span class="o">-</span><span class="n">rtems4</span><span class="o">.</span><span class="mi">10</span><span class="o">/</span><span class="n">qemuppc</span>
+<span class="o">./</span><span class="n">bit</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="Install_BSP_Extensions_1.5_--_(Deprecated_--_install_BSP_Extensions_1.6_instead)">Install BSP Extensions 1.5 – (Deprecated – install BSP Extensions 1.6
+instead)</a></p>
+</div>
+<div class="section" id="install-bsp-extensions-1-6">
+<h4>Install BSP Extensions 1.6<a class="headerlink" href="#install-bsp-extensions-1-6" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=/gem_base/targetOS/RTEMS/rtems-4.10/bin:$PATH
+cd /gem_base/targetOS/RTEMS/source/rtems
+wget --passive-ftp --no-directories --retr-symlinks http://www.slac.stanford.edu/~strauman/rtems/ssrlapps-R_libbspExt_1_6.tgz
+tar xzvf ssrlapps-R_libbspExt_1_6.tgz
+cd /gem_base/targetOS/RTEMS/source/rtems/ssrlapps-R_libbspExt_1_6
+mkdir build
+cd build
+../configure --with-rtems-top=/gem_base/targetOS/RTEMS/rtems-4.10 --prefix=/gem_base/targetOS/RTEMS/rtems-4.10 --with-package-subdir=. --enable-std-rtems-installdirs
+make
+make install
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="EPICSInstall.html" class="btn btn-neutral float-right" title="Installing EPICS Base on the ADE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../code/code-index.html" class="btn btn-neutral float-left" title="Code Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gemini Controls
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

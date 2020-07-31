@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Schedule Scope &mdash; Gemini Documentation 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Index" href="ag-use-cases.html" />
+    <link rel="prev" title="Other Tests" href="other-index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Gemini Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Community Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://epics-controls.org">EPICS Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.epics-controls.org">EPICS Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Quick Start Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start/quick-start.html">Quick Start Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PDFs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pdfs/pdfs-index.html">PDF Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Wiki Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../wiki/wiki-index.html">Wiki Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">HTML Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../html/html-index.html">Html Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other Docs:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="other-index.html">Other Tests</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><strong>Schedule</strong>                              <strong>Scope</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#no-resource-issues-pmac-spare-hardware-for-hbf-lab">No resource issues                        PMAC spare hardware for HBF lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-report-summary">Project Report Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#technical-status">Technical Status</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#highlights">Highlights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lowlights-what-did-not-go-according-to-plan">Lowlights (what did not go according to plan)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#activities-for-the-coming-month-s">Activities for the coming month(s):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#milestone-and-schedule">Milestone and Schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#issues-and-risks-summary">Issues and Risks Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html">1. Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#introduction">2. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#interaction-between-a-g-and-other-systems-in-blue-interactions-at-epics-leve">1. Interaction between A&amp;G and other systems. In <strong>blue</strong>, interactions at EPICS leve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#acronyms">3. Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#actors">4. Actors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#a-g-and-its-actors">2. A&amp;G and its actors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#top-level-a-g-use-case">5. Top Level A&amp;G Use Case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#a-g-top-level-use-case">3. A&amp;G Top-level use case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-operation-of-a-g-in-both-an-engineering-and-operations-capacity-with-a-human-in-the-loop-model">Goal        Operation of A&amp;G in both an engineering and operations capacity with a Human-in-the-loop model.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#a-g-human-actor-environment-overview">4. A&amp;G Human actor environment overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-operate-a-g-in-an-operations-environment">Goal        Operate A&amp;G in an operations environment.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#a-g-operations-environment-use-case-detail">5. A&amp;G Operations Environment use case detail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-operate-a-g-in-an-engineering-environment">Goal        Operate A&amp;G in an engineering environment.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#a-g-top-level-engineering-environment-use-case-details">6. A&amp;G Top Level Engineering Environment use case details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#a-g-actions-engineering-environment-use-case-details">7. A&amp;G Actions Engineering Environment use case details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#a-g-hrwfs-component-controller-engineering-environment-use-case-details">8. A&amp;G HRWFS Component Controller Engineering Environment use case details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-operate-the-a-g-in-a-machine-environment-without-human-interaction">Goal        Operate the A&amp;G in a machine environment –without human interaction.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#machine-a-g-use-case">11. Machine A&amp;G Use Case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#specific-use-case-details">6. Specific Use Case Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-startup-the-opi-and-interact-with-a-g">Goal        Startup the OPI and interact with A&amp;G</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-enable-or-disable-p1-p2-follow">Goal        Enable or disable P1/P2 follow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-unwrap-the-p1-p2-wrap">Goal          Unwrap the P1/P2 wrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-park-p1-p2">Goal        Park P1/P2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-park-science-fold-mirror">Goal        Park science fold mirror</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-park-ao-fold-mirror">Goal        Park AO fold mirror</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-park-hrwfs-pickoff-arm">Goal        Park HRWFS pickoff arm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-select-a-hrwfs-nd-filter-position">Goal        Select a HRWFS ND filter position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-select-a-hrwfs-cl-filter-position">Goal        Select a HRWFS CL filter position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-select-a-hrwfs-window-size">Goal        Select a HRWFS window size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-select-p1-p2-filter-position">Goal        Select P1/P2 filter position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-select-p1-p2-fieldstop-position">Goal        Select P1/P2 Fieldstop position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-configure-pmac1-pmac2-mailbox">Goal        Configure PMAC1/PMAC2 Mailbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-datum-all-hrwfs-mechanisms-at-once">Goal        Datum all HRWFS mechanisms at once.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-park-all-hrwfs-mechanisms-at-once">Goal        Park all HRWFS mechanisms at once.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-reboot-the-a-g-ioc">Goal        Reboot the A&amp;G IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-set-debug-level-command">Goal        Set Debug Level Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-set-simulation-level-command">Goal        Set Simulation Level Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-hrwfs-system-console">Goal        HRWFS System Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-test-hrwfs-car-mode-tree">Goal        Test HRWFS CAR Mode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-hrwfs-health-mode-tree">Goal        Visualize HRWFS Health Mode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#note-everything-shows-up-in-yellow-warning">Note           Everything shows up in yellow (warning)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-hrwfs-in-position-tree">Goal        Visualize HRWFS In-Position Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-hrwfs-datumed-tree">Goal        Visualize HRWFS Datumed Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-hrwfs-parked-tree">Goal        Visualize HRWFS Parked Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-hrwfs-in-position-mode-tree">Goal        Visualize HRWFS In-Position Mode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-hrwfs-flags-mode-tree">Goal        Visualize HRWFS Flags Mode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-hrwfs-optical-encoders">Goal        HRWFS Optical Encoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-datum-all-gbd-mechanisms-at-once">Goal        Datum all GBD mechanisms at once.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-park-all-gbd-mechanisms-at-once">Goal        Park all GBD mechanisms at once.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#id1">Goal        Reboot the A&amp;G IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#id2">Goal        Set Debug Level Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#id3">Goal        Set Simulation Level Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-gbd-visualize-system-console">Goal        GBD Visualize System Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-gbd-car-mode-tree">Goal        Visualize GBD CAR Mode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-gbd-health-mode-tree">Goal        Visualize GBD Health Mode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-gbd-in-position-tree">Goal        Visualize GBD In-Position Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-gbd-datumed-tree">Goal        Visualize GBD Datumed Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-gbd-parked-tree">Goal        Visualize GBD Parked Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-gbd-in-position-mode-tree">Goal        Visualize GBD In-Position Mode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-gbd-flags-mode-tree">Goal        Visualize GBD Flags Mode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-hd-counter-torques">Goal        Visualize HD Counter Torques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-maccon-amplifiers">Goal        Visualize Maccon Amplifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#note-there-is-an-option-small-mechanism-reset-that-does-not-open-any-window">Note           There is an option “Small Mechanism Reset” that does not open any window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-pwfs1-pwfs2-tolerance-command">Goal        PWFS1/PWFS2 Tolerance Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-pwfs1-pwfs2-set-orientation-command">Goal        PWFS1/PWFS2 Set Orientation Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-pwfs1-pwfs2-follow-command">Goal        PWFS1/PWFS2 Follow Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-pwfs1-pwfs2-flip-command">Goal        PWFS1/PWFS2 Flip Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-pwfs1-pwfs2-unwrap-command">Goal        PWFS1/PWFS2 Unwrap Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-pwfs1-pwfs2-stop-command">Goal        PWFS1/PWFS2 Stop Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-pwfs1-pwfs2-20-hz-demand-simulation">Goal        PWFS1/PWFS2 20 Hz Demand Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-pwfs1-pwfs2-offsets">Goal        Visualize PWFS1/PWFS2 Offsets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-pwfs1-pwfs2-console-configuration">Goal        Visualize PWFS1/PWFS2 Console Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-pwfs1-pwfs2-sirs-for-tcs">Goal        Visualize PWFS1/PWFS2 SIRs for TCS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-define-all-a-g-mechanisms">Goal        Define all A&amp;G mechanisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-move-the-mechanism-to-a-valid-position">Goal        Move the mechanism to a valid position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-move-the-mechanism-using-real-position">Goal        Move the Mechanism using real position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-move-the-mechanism-using-engineering-position">Goal        Move the Mechanism using engineering position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-datum-the-mechanism">Goal        Datum the mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-park-the-mechanism">Goal        Park the mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-stop-the-mechanism">Goal        Stop the mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-load-all-mechanism-luts">Goal        Load all mechanism LUTs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-update-position-menu">Goal        Update position menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-handle-hrwfs-calibration-source-mechanism">Goal        Handle HRWFS Calibration Source Mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-statuses-and-data-of-mechanism">Goal        Visualize statuses and Data of mechanism</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-motor-status-words">Goal        Visualize motor status words</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-visualize-low-level-displays">Goal        Visualize low level displays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-lut-files-are-uploaded">Goal        LUT files are uploaded</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-pcal-script-sent-ag-demands">Goal        Pcal script sent AG demands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-to-receive-commands">Goal        To receive commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#goal-to-provide-relevant-information-to-gea-tcs-ocs">Goal        To provide relevant information to GEA, TCS, OCS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ag-use-cases.html#appendix">7. Appendix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HelloWorld.html">Hello World</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code/code-index.html">Code Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Gemini HowTo's:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/RTEMSInstall.html">Installing RTEMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/EPICSInstall.html">Installing EPICS Base on the ADE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/ADEInstall.html">Installing ADE Build Tools</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gemini Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="other-index.html">Other Tests</a> &raquo;</li>
+        
+      <li><strong>Schedule</strong>                              <strong>Scope</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/other/ag-upgrade-report.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="schedule-scope">
+<h1><strong>Schedule</strong>                              <strong>Scope</strong><a class="headerlink" href="#schedule-scope" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="no-resource-issues-pmac-spare-hardware-for-hbf-lab">
+<h1>No resource issues                        PMAC spare hardware for HBF lab<a class="headerlink" href="#no-resource-issues-pmac-spare-hardware-for-hbf-lab" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p><strong>[Color code title box using the paint bucket icon in the menu bar:
+green (OK), yellow (caution), or red (critical) depending on the
+status]</strong></p>
+<p><strong>Links to Status Report History</strong></p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><a href="#id1"><span class="problematic" id="id2">`</span></a>August, 28th 2019 Project</dt><dd><p>Update &lt;<a class="reference external" href="https://drive.google.com/open?id=1XTN9iLiSKs5vAj385wjbqnn65KLNJ2l0GDeAv7EaAA0">https://drive.google.com/open?id=1XTN9iLiSKs5vAj385wjbqnn65KLNJ2l0GDeAv7EaAA0</a>&gt;`__</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a href="#id3"><span class="problematic" id="id4">`</span></a>July 25th, 2019 Project</dt><dd><p>Update &lt;<a class="reference external" href="https://drive.google.com/open?id=1JE2haTl6oLgyqmGVZQgL-CDA3mRmIu38t9igeu59rL0%20%EF%BF%BC">https://drive.google.com/open?id=1JE2haTl6oLgyqmGVZQgL-CDA3mRmIu38t9igeu59rL0%20%EF%BF%BC</a>&gt;`__</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a href="#id5"><span class="problematic" id="id6">`</span></a>June 27th, 2019 Project</dt><dd><p>Update &lt;<a class="reference external" href="https://drive.google.com/open?id=154PRbSJWLLCQrbHE6sA3wLlTmndTRZnleJaBZff0Omo">https://drive.google.com/open?id=154PRbSJWLLCQrbHE6sA3wLlTmndTRZnleJaBZff0Omo</a>&gt;`__</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="project-report-summary">
+<h1>Project Report Summary<a class="headerlink" href="#project-report-summary" title="Permalink to this headline">¶</a></h1>
+<p>The A&amp;G upgrade progress was consistent throughout August with drafts of
+all documentation delivered ahead of schedule. All code migration and
+documentation milestones are on track.</p>
+<div class="section" id="technical-status">
+<h2>Technical Status<a class="headerlink" href="#technical-status" title="Permalink to this headline">¶</a></h2>
+<p><strong>Code Migration –</strong> Status unchanged since July. The focus for the
+team is to finish the documentation. A code review will be finished in
+September before the lab testing begins. There’s an issue tracking
+<a class="reference external" href="https://docs.google.com/spreadsheets/d/1c8IpTXpTzllR9PhwWtzZXzmkpkOtgZOe0zaeSJ7kUnU/edit#gid=0">spreadsheet</a>
+setup for the team to discuss and resolve migration issues.</p>
+<p><strong>Documentation</strong></p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The <a href="#id7"><span class="problematic" id="id8">`</span></a>Use</dt><dd><p>Cases &lt;<a class="reference external" href="https://drive.google.com/a/gemini.edu/open?id=1cCbEo3Pbomgk0o9jqKofdx3PtH9Gchf1cT7u-L4SBac">https://drive.google.com/a/gemini.edu/open?id=1cCbEo3Pbomgk0o9jqKofdx3PtH9Gchf1cT7u-L4SBac</a>&gt;`__
+document has been presented to the team, discussed and finalized
+on August 16th.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The</dt><dd><p><a class="reference external" href="https://drive.google.com/a/gemini.edu/open?id=1L4XMuhPA9uK0IB1ueUonkal4IB343fyQYxF4hcrmuEk">Requirements</a>
+document draft was reviewed August 27th and will be finalized
+August 30th.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The <a href="#id9"><span class="problematic" id="id10">`</span></a>Test</dt><dd><p>Plan &lt;<a class="reference external" href="https://drive.google.com/a/gemini.edu/open?id=1nbq4pzCRsX5DSBWMzgz5aiQMjxyicPICBqtSMKuBuFQ">https://drive.google.com/a/gemini.edu/open?id=1nbq4pzCRsX5DSBWMzgz5aiQMjxyicPICBqtSMKuBuFQ</a>&gt;`__
+draft was released ahead of schedule and started review on August
+27th. The final review of the test plan is expected before
+September 6th.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>New <a href="#id11"><span class="problematic" id="id12">`</span></a>Use</dt><dd><p>Cases &lt;<a class="reference external" href="https://drive.google.com/a/gemini.edu/open?id=19DrV4CgcdMFkc5VbWzQ5CDdfDS9AVVkr9U_X5Yx5QG0">https://drive.google.com/a/gemini.edu/open?id=19DrV4CgcdMFkc5VbWzQ5CDdfDS9AVVkr9U_X5Yx5QG0</a>&gt;`__,
+<a class="reference external" href="https://drive.google.com/a/gemini.edu/open?id=1nyrdStyPZuhk8A66fytyjj5KRGjk9h3CrvlS2oiFOck">Requirements</a>
+and <a class="reference external" href="https://drive.google.com/a/gemini.edu/open?id=1s_jRlR_t4vTTTvxOqM9oCM1XspRPH6G0W_wRGNG8VrA">Test
+Plan</a>
+documents were made for the OIWFS Gateway which is exclusive to
+Gemini South. These will be finalized by September 6th.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="highlights">
+<h1>Highlights<a class="headerlink" href="#highlights" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>All documentation products finalized or drafts released for review.</p></li>
+<li><p>New OIWFS Gateway documents released for Gemini South.</p></li>
+</ul>
+</div>
+<div class="section" id="lowlights-what-did-not-go-according-to-plan">
+<h1>Lowlights (what did not go according to plan)<a class="headerlink" href="#lowlights-what-did-not-go-according-to-plan" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><dl class="simple">
+<dt>PMAC hardware in the Gemini North lab is not currently loading</dt><dd><p>properly. This will need to be resolved before the lab testing can
+begin in October.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="activities-for-the-coming-month-s">
+<h1>Activities for the coming month(s):<a class="headerlink" href="#activities-for-the-coming-month-s" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Finalize Use cases and Requirements documents.</p></li>
+<li><dl class="simple">
+<dt>Finalize lab readiness at both sites and resolve PMAC configuration</dt><dd><p>issues.</p>
+</dd>
+</dl>
+</li>
+<li><p>Finalize code review for migrated systems.</p></li>
+<li><p>Begin executing test plans relevant for the lab environment</p></li>
+</ul>
+</div>
+<div class="section" id="milestone-and-schedule">
+<h1>Milestone and Schedule<a class="headerlink" href="#milestone-and-schedule" title="Permalink to this headline">¶</a></h1>
+<p><strong>WBS#</strong> <strong>Description</strong>                        <strong>Target Date</strong> <strong>Current Date</strong> <strong>Variance</strong> <strong>Comment</strong>
+======== ====================================== ===============
+================ ============ ===============
+1.1      CCB Modules                            06/27/2019      06/27/2019       0 days       Complete
+1.2      ag/cp Migration                        06/27/2019      06/27/2019       0 days       Complete
+1.3      ag/mk Migration                        06/27/2019      06/27/2019       0 days       Complete
+1.4      agSeq/cp Migration                     06/27/2019      06/27/2019       0 days       Complete
+1.5      agSeq/mk Migration                     06/27/2019      06/27/2019       0 days       Complete
+1.6      oiGateway Migration                    06/27/2019      06/27/2019       0 days       Complete
+1.7      Code review and code changes finalized 12/31/2019      12/31/2019       0 days       Ongoing</p>
+<blockquote>
+<div><p>through testing</p>
+</div></blockquote>
+<p>2.1      Use Cases                              08/16/2019      08/16/2019       0 days       Complete</p>
+<blockquote>
+<div><p>documentation</p>
+</div></blockquote>
+<p>2.2      Requirements                           08/26/2019      08/26/2019       0 days       Complete</p>
+<blockquote>
+<div><p>documentation</p>
+</div></blockquote>
+<p>2.3      Test Plans                             09/06/2019      09/06/2019       0 days       In Review
+3.0      Summit Tests                           12/31/2019      12/31/2019       0 days       Waiting
+4.0      Commissioning                          03/31/2020      03/31/2020       0 days       Waiting
+======== ====================================== ===============
+================ ============ ===============</p>
+</div>
+<div class="section" id="issues-and-risks-summary">
+<h1>Issues and Risks Summary<a class="headerlink" href="#issues-and-risks-summary" title="Permalink to this headline">¶</a></h1>
+<p>Lab hardware for HBF is possible issue. We’re confirming 2 spare PMAC boards are functional. Low due to remaining time * Working with Stan to confirm viable spares. Stan has more PMAC spares in stock which we can ask him to borrow.</p>
+<blockquote>
+<div><p>* We may defer any testing at HBF that requires the PMAC and progress straight to the summit to complete the test plan.</p>
+</div></blockquote>
+<hr class="docutils" />
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ag-use-cases.html" class="btn btn-neutral float-right" title="1. Index" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="other-index.html" class="btn btn-neutral float-left" title="Other Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gemini Controls
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

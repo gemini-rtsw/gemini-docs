@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Software Coordinator Roles &mdash; Gemini Documentation 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Html Tests" href="../html/html-index.html" />
+    <link rel="prev" title="Wiki Tests" href="wiki-index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Gemini Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Community Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://epics-controls.org">EPICS Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.epics-controls.org">EPICS Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Quick Start Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start/quick-start.html">Quick Start Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PDFs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pdfs/pdfs-index.html">PDF Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Wiki Docs:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="wiki-index.html">Wiki Tests</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Coordinator Roles</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">HTML Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../html/html-index.html">Html Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/other-index.html">Other Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code/code-index.html">Code Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Gemini HowTo's:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/RTEMSInstall.html">Installing RTEMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/EPICSInstall.html">Installing EPICS Base on the ADE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/ADEInstall.html">Installing ADE Build Tools</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gemini Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="wiki-index.html">Wiki Tests</a> &raquo;</li>
+        
+      <li>Software Coordinator Roles</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/wiki/crwikitest.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="software-coordinator-roles">
+<h1>Software Coordinator Roles<a class="headerlink" href="#software-coordinator-roles" title="Permalink to this headline">¶</a></h1>
+<div class="docutils container" id="globalwrapper">
+<div class="docutils container" id="column-content">
+<div class="docutils container" id="content">
+<p class="firstheading rubric" id="firstheading">Software Coordinator Roles</p>
+<div class="mw-body docutils container" id="bodycontent">
+<div class="docutils container" id="sitesub">
+<p>From SWG</p>
+</div>
+<div class="mw-jump docutils container" id="jump-to-nav">
+<p>Jump to: <a class="reference external" href="#column-one">navigation</a>,
+<a class="reference external" href="#searchInput">search</a></p>
+</div>
+<div class="mw-content-ltr docutils container" id="mw-content-text">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="docutils container" id="toctitle">
+<p class="rubric" id="contents">Contents</p>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="#Responsibilities">1 Responsibilities</a></p>
+<ul>
+<li><p><a class="reference external" href="#General">1.1 General</a></p></li>
+<li><p><a class="reference external" href="#Fault_reports">1.2 Fault reports</a></p></li>
+<li><p><a class="reference external" href="#Change_Requests">1.3 Change Requests</a></p></li>
+<li><p><a class="reference external" href="#Shift_Checklists">1.4 Shift Checklists</a></p>
+<ul>
+<li><p><a class="reference external" href="#Start_of_the_shift">1.4.1 Start of the shift</a></p></li>
+<li><p><a class="reference external" href="#End_of_the_shift">1.4.2 End of the shift</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric" id="edit-responsibilities">[<a class="reference external" href="/index.php?title=Software_Coordinator_Roles&amp;action=edit&amp;section=1">edit</a>]
+Responsibilities</p>
+<p class="rubric" id="edit-general">[<a class="reference external" href="/index.php?title=Software_Coordinator_Roles&amp;action=edit&amp;section=2">edit</a>]
+General</p>
+<ul class="simple">
+<li><p>Attend the 9:30 coordination meeting</p></li>
+<li><p>Be the primary point of contact for software problems
+during their shift (daytime and nighttime), requesting
+help from other people in the group as needed.</p></li>
+<li><p>Whenever following up on a new issue (not yet
+documented in the wiki) that has the potential to
+recur, the software engineer performing the
+investigation is responsible for adding the details to
+the Wiki. There should be a troubleshooting section
+for each system we have (see the wiki guidelines
+here).</p></li>
+<li><p>At the end of his/her shift, the software coordinator
+will write a brief summary, detailing outstanding
+issues and interesting problems encountered. The
+report will be included in the Software Operations
+Meeting notes.</p></li>
+</ul>
+<p class="rubric" id="edit-fault-reports">[<a class="reference external" href="/index.php?title=Software_Coordinator_Roles&amp;action=edit&amp;section=3">edit</a>]
+Fault reports</p>
+<ul class="simple">
+<li><p>Faults should be assigned prior too, or during the
+9:30 meeting.</p></li>
+<li><p>The Software Coordinator is responsible for followup
+on all FRs during their shift. They can offload to the
+rest of the team at need.</p></li>
+<li><p>Software related faults are assigned to the individual
+investigating the FR.</p></li>
+<li><p>Keep track of the pending fault report and make sure
+other people update the fault reports assigned to
+them.</p></li>
+<li><p>Create Jira REL tasks for fault reports closed as long
+term fix (LTF). The REL task should have a reference
+to the fault report URL in a comment if only one
+instance, or to the master fault if there are
+duplicates.</p>
+<ul>
+<li><p>Add the URL to the LTF REL task in the solution
+field when closing the fault.</p></li>
+<li><p>The reference to the FR in the REL task should be
+entered in <em>Requirement ID</em> field.</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="edit-change-requests">[<a class="reference external" href="/index.php?title=Software_Coordinator_Roles&amp;action=edit&amp;section=4">edit</a>]
+Change Requests</p>
+<ul class="simple">
+<li><p>Check for new change software-related requests and
+take care of them (daily). The default assignee will
+be the software coordinator unless the CR was
+submitted by someone in the SWG.</p></li>
+<li><p>Follow up on CR reports assigned to other people in
+the group and make sure they take care of them.</p></li>
+<li><p>Seek approval for CR that has the potential to hold up
+operations or other tasks.</p>
+<ul>
+<li><p>At GS, we use a <a class="reference external" href="https://drive.google.com/open?id=1JfeYLPvMtOgvKp5k0PtN-C08OVjpPLHkHnfejnR_Mg4">spreadsheet in Google
+Docs</a>
+to keep track of our pending change requests.</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric" id="edit-shift-checklists">[<a class="reference external" href="/index.php?title=Software_Coordinator_Roles&amp;action=edit&amp;section=5">edit</a>]
+Shift Checklists</p>
+<p class="rubric" id="edit-start-of-the-shift">[<a class="reference external" href="/index.php?title=Software_Coordinator_Roles&amp;action=edit&amp;section=6">edit</a>]
+Start of the shift</p>
+<ul class="simple">
+<li><p><strong>GN</strong>: Change the Nighttime Callout number.</p></li>
+<li><p><strong>GS</strong>: Hand over the Software Coordinator Cell Phone
+(<strong>fully charged!</strong>).</p></li>
+</ul>
+<p class="rubric" id="edit-end-of-the-shift">[<a class="reference external" href="/index.php?title=Software_Coordinator_Roles&amp;action=edit&amp;section=7">edit</a>]
+End of the shift</p>
+<ul class="simple">
+<li><p><strong>Check for any software pending change requests</strong>.</p>
+<ul>
+<li><p>Complete any fault reports assigned to the SWC in
+their shift.</p></li>
+<li><p>Send reminder to other people to complete
+outstanding fault reports.</p></li>
+</ul>
+</li>
+<li><p><strong>Check for any pending fault reports</strong>.</p>
+<ul>
+<li><p>Coordinate with the next SWC to see who will take
+care of fault reports just received.</p></li>
+<li><p>Send reminder to other people to take action of
+fault reports assigned to them.</p></li>
+</ul>
+</li>
+<li><p><strong>Make sure that any unassigned software fault reports
+are assigned to someone in the group</strong>.</p></li>
+<li><p><strong>Make sure that any Jira tasks associated to fault
+reports closed as long term fix during the week are
+labeled LTF</strong>.</p></li>
+<li><p><strong>Ensure there are no uncommitted GEA configuration
+changes (pages and channel config)</strong></p></li>
+<li><p><strong>Complete</strong><a class="reference external" href="http://opswiki.wikis.gemini.edu/index.php/Science/Engineering_Operations_Meeting_Minutes#MEETING_MINUTES">Sci/Eng meeting
+notes</a><strong>(Meeting
+date &gt; SW Report) for the week</strong>.</p>
+<ul>
+<li><p>In case you need to assist the meeting, the <strong>Zoom
+ID is 938 883 300(GN? - seems wrong) / 133 243
+602(GS)</strong></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="printfooter docutils container">
+<p>Retrieved from
+“<a class="reference external" href="http://swg.wikis-internal.gemini.edu/index.php?title=Software_Coordinator_Roles&amp;oldid=20172">http://swg.wikis-internal.gemini.edu/index.php?title=Software_Coordinator_Roles&amp;oldid=20172</a>”</p>
+</div>
+</div>
+</div>
+</div>
+<div class="docutils container" id="column-one">
+<div class="portlet docutils container" id="p-cactions">
+<p class="rubric" id="views">Views</p>
+<div class="pbody docutils container">
+<ul class="simple">
+<li><p><a class="reference external" href="/index.php/Software_Coordinator_Roles">Page</a></p></li>
+<li><p><a class="reference external" href="/index.php?title=Talk:Software_Coordinator_Roles&amp;action=edit&amp;redlink=1">Discussion</a></p></li>
+<li><p><a class="reference external" href="/index.php?title=Software_Coordinator_Roles&amp;action=edit">Edit</a></p></li>
+<li><p><a class="reference external" href="/index.php?title=Software_Coordinator_Roles&amp;action=history">History</a></p></li>
+</ul>
+</div>
+</div>
+<div class="portlet docutils container" id="p-personal">
+<p class="rubric" id="personal-tools">Personal tools</p>
+<div class="pbody docutils container">
+<ul class="simple">
+<li><p><a class="reference external" href="/index.php?title=Special:UserLogin&amp;returnto=Software+Coordinator+Roles">Log in / create
+account</a></p></li>
+</ul>
+</div>
+</div>
+<div class="portlet docutils container" id="p-logo">
+<p>` &lt;/index.php/Main_Page&gt;`__</p>
+</div>
+<div class="generated-sidebar portlet docutils container" id="p-navigation">
+<p class="rubric" id="navigation">Navigation</p>
+<div class="pbody docutils container">
+<ul class="simple">
+<li><p><a class="reference external" href="/index.php/Main_Page">Main page</a></p></li>
+<li><p><a class="reference external" href="/index.php/SWG:Community_portal">Community portal</a></p></li>
+<li><p><a class="reference external" href="/index.php/SWG:Current_events">Current events</a></p></li>
+<li><p><a class="reference external" href="/index.php/Special:RecentChanges">Recent changes</a></p></li>
+<li><p><a class="reference external" href="/index.php/Special:Random">Random page</a></p></li>
+<li><p><a class="reference external" href="/index.php/Help:Contents">Help</a></p></li>
+</ul>
+</div>
+</div>
+<div class="portlet docutils container" id="p-search">
+<p class="rubric" id="search">Search</p>
+</div>
+<div class="portlet docutils container" id="p-tb">
+<p class="rubric" id="toolbox">Toolbox</p>
+<div class="pbody docutils container">
+<ul class="simple">
+<li><p><a class="reference external" href="/index.php/Special:WhatLinksHere/Software_Coordinator_Roles">What links
+here</a></p></li>
+<li><p><a class="reference external" href="/index.php/Special:RecentChangesLinked/Software_Coordinator_Roles">Related
+changes</a></p></li>
+<li><p><a class="reference external" href="/index.php/Special:SpecialPages">Special pages</a></p></li>
+<li><p><a class="reference external" href="/index.php?title=Software_Coordinator_Roles&amp;printable=yes">Printable
+version</a></p></li>
+<li><p><a class="reference external" href="/index.php?title=Software_Coordinator_Roles&amp;oldid=20172">Permanent
+link</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="docutils container" id="footer">
+<div class="docutils container" id="f-poweredbyico">
+<p><a class="reference external" href="//www.mediawiki.org/"><img alt="Powered by MediaWiki" src="skins/common/images/poweredby_mediawiki_88x31.png" style="width: 88px; height: 31px;" /></a></p>
+</div>
+<ul class="simple">
+<li><p>This page was last modified on 24 March 2020, at 03:52.</p></li>
+<li><p>This page has been accessed 86 times.</p></li>
+<li><p><a class="reference external" href="/index.php/SWG:Privacy_policy">Privacy policy</a></p></li>
+<li><p><a class="reference external" href="/index.php/SWG:About">About SWG</a></p></li>
+<li><p><a class="reference external" href="/index.php/SWG:General_disclaimer">Disclaimers</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../html/html-index.html" class="btn btn-neutral float-right" title="Html Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="wiki-index.html" class="btn btn-neutral float-left" title="Wiki Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gemini Controls
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

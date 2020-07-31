@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quick Start Guide &mdash; Gemini Documentation 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PDF Tests" href="../pdfs/pdfs-index.html" />
+    <link rel="prev" title="Gemini Real-Time Controls Documentation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Gemini Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Community Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://epics-controls.org">EPICS Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.epics-controls.org">EPICS Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Quick Start Guide:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#convert-docs-to-rst-or-write-rst">Convert docs to rst or write rst</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#put-docs-into-the-gemini-documents-repo">Put docs into the Gemini Documents repo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compile-rst-locally-highly-recommended">Compile rst locally (highly recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-read-the-docs-account-optional">Create a Read-The-Docs account (optional)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-info">Additional Info</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">PDFs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pdfs/pdfs-index.html">PDF Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Wiki Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../wiki/wiki-index.html">Wiki Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">HTML Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../html/html-index.html">Html Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/other-index.html">Other Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code/code-index.html">Code Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Gemini HowTo's:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/RTEMSInstall.html">Installing RTEMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/EPICSInstall.html">Installing EPICS Base on the ADE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/ADEInstall.html">Installing ADE Build Tools</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gemini Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Quick Start Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/quick-start/quick-start.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quick-start-guide">
+<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="convert-docs-to-rst-or-write-rst">
+<h2>Convert docs to rst or write rst<a class="headerlink" href="#convert-docs-to-rst-or-write-rst" title="Permalink to this headline">¶</a></h2>
+<p><em>Read the docs uses RestructuredText (rst) markup text. All documents must be written in rst.</em></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Install pandoc then <code class="docutils literal notranslate"><span class="pre">pandoc</span> <span class="pre">--help</span></code></p></li>
+<li><p>pdfs will have to be converted to docx using Word, most other formats can be converted directly</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandoc</span> <span class="pre">-f</span> <span class="pre">docx</span> <span class="pre">-t</span> <span class="pre">rst</span> <span class="pre">filename.docx</span> <span class="pre">-o</span> <span class="pre">filename.rst</span></code> typical pandoc usage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandoc</span> <span class="pre">-f</span> <span class="pre">docx</span> <span class="pre">-t</span> <span class="pre">rst</span> <span class="pre">filename.docx</span> <span class="pre">-o</span> <span class="pre">filename.rst</span> <span class="pre">--extract-media=./media</span></code> convert doc with images</p></li>
+<li><p>Or <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">write rst</a></p></li>
+</ol>
+<ul class="simple">
+<li><p>Note: rst is indent aware like python</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="put-docs-into-the-gemini-documents-repo">
+<h2>Put docs into the Gemini Documents repo<a class="headerlink" href="#put-docs-into-the-gemini-documents-repo" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Install git</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git&#64;github.com:gemini-rtsw/gemini-docs.git</span></code> clone the Gemini Docs repo</p></li>
+<li><p>Copy rst files into the appropriate repo directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;filename&gt;</span></code> add your new files to the repo</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vi</span> <span class="pre">index.rst</span></code> edit the appropriate index.rst file and add your files to a toctree. See the index.rst below.</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Gemini Real-Time Controls Documentation</span>
+<span class="gh">=========================================</span>
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:hidden:</span>
+   <span class="nc">:caption:</span> Community Resources
+
+   EPICS Website &lt;https://epics-controls.org&gt;
+   EPICS Documentation &lt;https://docs.epics-controls.org&gt;
+<span class="hll">   
+</span><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:caption:</span> Quick Start Guide:
+
+   Quick Start Guide &lt;quick-start/quick-start&gt;
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> PDFs:
+
+   pdfs/pdfs-index
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> Wiki Docs: 
+
+   wiki/wiki-index
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> HTML Docs:
+
+   html/html-index
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> Other Docs:
+   <span class="nc">:titlesonly:</span>
+   
+   other/other-index
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 1
+   <span class="nc">:caption:</span> Code:
+   
+   code/code-index
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 1
+   <span class="nc">:caption:</span> Gemini HowTo&#39;s:
+
+   howtos/RTEMSInstall
+   howtos/EPICSInstall
+   howtos/ADEInstall
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">&lt;filename[s]&gt;</span> <span class="pre">-m</span> <span class="pre">&quot;comment&quot;</span></code> commit your changes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> push changest to github and trigger Read-The-Docs build</p></li>
+<li><p>After the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> Read-The-Docs will take a few minutes to upload your docs</p></li>
+<li><p>View updated docs <a class="reference external" href="https://gemini-docs-rt.readthedocs.io/en/latest/index.html">gemini-docs-rt.readthedocs.io</a></p></li>
+<li><p>View the build page</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <a class="reference external" href="https://www.github.com/gemini-rtsw/gemini-docs">github.com</a> repo page will also have a link to the documents on Read-The-Docs</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="compile-rst-locally-highly-recommended">
+<h2>Compile rst locally (highly recommended)<a class="headerlink" href="#compile-rst-locally-highly-recommended" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Install pip (Ex: on macOS <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">easy_install</span> <span class="pre">pip</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sphinx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sphinx_rtd_theme</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">--version</span></code></p></li>
+<li><p>On macOS only, add <code class="docutils literal notranslate"><span class="pre">PATH=&quot;$HOME/Library/Python/2.7/bin:$PATH&quot;</span></code> to .bash_profile</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> in Gemini Docs repository home</p></li>
+<li><p>Your files will be in <code class="docutils literal notranslate"><span class="pre">_build/html</span></code></p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="create-a-read-the-docs-account-optional">
+<h2>Create a Read-The-Docs account (optional)<a class="headerlink" href="#create-a-read-the-docs-account-optional" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="readthedocs.org">Read-The-Docs</a></p></li>
+<li><p>Click on <cite>Sign up</cite></p></li>
+<li><p>Click on <cite>Sign up with GitHub</cite></p></li>
+<li><p>Click on <cite>Import a Project</cite></p></li>
+<li><p>From your main page you can click on a project to access the admin page</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="additional-info">
+<h2>Additional Info<a class="headerlink" href="#additional-info" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">reStructuredText Primer</a></p></li>
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/1.5/markup/toctree.html">TOC Tree usage</a></p></li>
+<li><p><a class="reference external" href="https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.htmltext#-formatting">Another rst guide</a></p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pdfs/pdfs-index.html" class="btn btn-neutral float-right" title="PDF Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Gemini Real-Time Controls Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gemini Controls
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

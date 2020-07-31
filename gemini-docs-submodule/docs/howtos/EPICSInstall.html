@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing EPICS Base on the ADE &mdash; Gemini Documentation 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installing ADE Build Tools" href="ADEInstall.html" />
+    <link rel="prev" title="Installing RTEMS" href="RTEMSInstall.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Gemini Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Community Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://epics-controls.org">EPICS Website</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.epics-controls.org">EPICS Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Quick Start Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-start/quick-start.html">Quick Start Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PDFs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pdfs/pdfs-index.html">PDF Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Wiki Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../wiki/wiki-index.html">Wiki Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">HTML Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../html/html-index.html">Html Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other Docs:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/other-index.html">Other Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code/code-index.html">Code Tests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Gemini HowTo's:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="RTEMSInstall.html">Installing RTEMS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing EPICS Base on the ADE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#epics-installation">EPICS Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-epics-r3-15-8-alternatively-install-epics-r3-15-x-or-install-epics-r7-x-and-ignore-the-rest-of-these-instructions">Install EPICS R3.15.8 (alternatively, Install EPICS R3.15.x or Install EPICS R7.x and ignore the rest of these instructions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-gemini-specific-changes-to-epics-base">Install Gemini Specific changes to EPICS BASE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-tdct">Install TDCT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-msi">Install MSI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ADEInstall.html">Installing ADE Build Tools</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gemini Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Installing EPICS Base on the ADE</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/howtos/EPICSInstall.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installing-epics-base-on-the-ade">
+<h1>Installing EPICS Base on the ADE<a class="headerlink" href="#installing-epics-base-on-the-ade" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="epics-installation">
+<h2>EPICS Installation<a class="headerlink" href="#epics-installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-epics-r3-15-8-alternatively-install-epics-r3-15-x-or-install-epics-r7-x-and-ignore-the-rest-of-these-instructions">
+<h3>Install EPICS R3.15.8 (alternatively, <a class="reference external" href="Install_EPICS_R3.15.x">Install EPICS R3.15.x</a> or <a class="reference external" href="Install_EPICS_R7.x">Install EPICS R7.x</a> and ignore the rest of these instructions)<a class="headerlink" href="#install-epics-r3-15-8-alternatively-install-epics-r3-15-x-or-install-epics-r7-x-and-ignore-the-rest-of-these-instructions" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">R3</span><span class="o">.</span><span class="mf">15.8</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">R3</span><span class="o">.</span><span class="mf">15.8</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gemini</span><span class="o">-</span><span class="n">rtsw</span><span class="o">/</span><span class="n">epics</span><span class="o">-</span><span class="n">base</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">epics</span><span class="o">-</span><span class="n">base</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">epics</span><span class="o">-</span><span class="n">base</span><span class="o">/</span><span class="n">epics</span><span class="o">-</span><span class="n">base</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">GS3</span><span class="o">.</span><span class="mi">14</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">GS3</span><span class="o">.</span><span class="mi">14</span><span class="o">-</span><span class="n">pdev2</span> <span class="n">GS3</span><span class="o">.</span><span class="mi">14</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">upstream</span><span class="o">/</span><span class="mf">3.14</span>               <span class="o">&lt;--</span> <span class="n">This</span> <span class="n">will</span> <span class="n">show</span> <span class="n">an</span> <span class="n">error</span> <span class="n">that</span> <span class="n">we</span><span class="s1">&#39;ll fix in the next steps</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">configure</span><span class="o">/</span><span class="n">CONFIG_SITE_ENV</span>
+<span class="n">git</span> <span class="n">commit</span>
+</pre></div>
+</div>
+<p>make sure base/configure/os/CONFIG_SITE.Common.RTEMS has:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Where to find RTEMS
+#
+RTEMS_VERSION = 4.10
+RTEMS_BASE = /gem_base/targetOS/RTEMS/rtems-$(RTEMS_VERSION)
+.
+.
+.
+# Select the command-line-input library to use
+#
+#COMMANDLINE_LIBRARY = EPICS
+#COMMANDLINE_LIBRARY = LIBTECLA
+COMMANDLINE_LIBRARY = READLINE
+</pre></div>
+</div>
+<p>Set the timezone in base/configure/CONFIG_SITE_ENV</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EPICS_TIMEZONE</span><span class="o">=</span><span class="n">UTC</span><span class="p">::</span><span class="mi">0</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Set the development snapshot string in
+base/configure/CONFIG_BASE_VERSION:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EPICS_DEV_SNAPSHOT</span><span class="o">=-</span><span class="n">GS</span>
+</pre></div>
+</div>
+<p>Now build EPICS</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span>
+<span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-gemini-specific-changes-to-epics-base">
+<h3>Install Gemini Specific changes to EPICS BASE<a class="headerlink" href="#install-gemini-specific-changes-to-epics-base" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">+</span><span class="n">w</span> <span class="o">/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">R3</span><span class="o">.</span><span class="mf">15.8</span><span class="o">/</span><span class="n">base</span><span class="o">/</span><span class="n">templates</span><span class="o">/</span><span class="n">makeBaseApp</span><span class="o">/</span><span class="n">top</span><span class="o">/</span><span class="n">configure</span><span class="o">/*</span>
+<span class="n">export</span> <span class="n">GEM_EPICS_RELEASE</span><span class="o">=</span><span class="n">R3</span><span class="o">.</span><span class="mf">15.8</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">ade</span><span class="o">/</span><span class="n">Gemini</span><span class="o">-</span><span class="n">ADE</span><span class="o">-</span><span class="mf">1.5</span><span class="o">/</span><span class="n">makeGemApp</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-tdct">
+<h3>Install TDCT<a class="headerlink" href="#install-tdct" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Use the instructions to to install TDCT according to the new scheme</div>
+<div class="line"><a class="reference external" href="New_Scheme_For_TDCT_Installation">New_Scheme_For_TDCT_Installation</a></div>
+</div>
+</div>
+<div class="section" id="install-msi">
+<h3>Install MSI<a class="headerlink" href="#install-msi" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">gem_base</span><span class="o">/</span><span class="n">epics</span><span class="o">/</span><span class="n">R3</span><span class="o">.</span><span class="mf">15.8</span><span class="o">/</span><span class="n">extensions</span><span class="o">/</span><span class="n">src</span>
+<span class="n">svn</span> <span class="n">co</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">sbfsvn02</span><span class="o">/</span><span class="n">gemini</span><span class="o">-</span><span class="n">sw</span><span class="o">/</span><span class="n">gem</span><span class="o">/</span><span class="n">vendor</span><span class="o">/</span><span class="n">support</span><span class="o">/</span><span class="n">msi</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="mi">7</span> <span class="n">msi</span>
+<span class="n">cd</span> <span class="n">msi</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ADEInstall.html" class="btn btn-neutral float-right" title="Installing ADE Build Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="RTEMSInstall.html" class="btn btn-neutral float-left" title="Installing RTEMS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Gemini Controls
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
