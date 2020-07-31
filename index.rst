@@ -27,3 +27,9 @@ Gemini Real-Time Controls Documentation
    howtos/Docker
    howtos/SvnToGit
    Read-The-Docs Quick Start <howtos/RTD-Quick-Start>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Sub Module:
+
+   gemini-docs-submodule/index.rst
