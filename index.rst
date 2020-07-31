@@ -1,5 +1,5 @@
-Gemini Real-Time Controls Documentation
-=========================================
+Gemini Real-Time Controls Documentation 
+========================================
 
 .. toctree::
    :hidden:
