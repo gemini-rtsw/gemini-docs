@@ -26,6 +26,7 @@ Gemini Real-Time Controls Documentation
    howtos/ADEInstall
    howtos/Docker
    howtos/SvnToGit
+   howtos/CentOS8-VM
    Read-The-Docs Quick Start <howtos/RTD-Quick-Start>
 
 .. toctree::
