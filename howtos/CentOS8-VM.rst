@@ -17,3 +17,32 @@ To work around this issue in the VM's network settings activate *NAT* and in the
 *Paravirtualized Network (virtio-net)*. Then VPN connection to Gemini can be activated on the host system. Reconnect your virtual network and the host system's
 VPN connection should be accessible from within the guest system now.
 
+Gemini's RTSWG RPM Repository
+-----------------------------
+Having activated the VPN connection to or being located within HBF facility, you can ouput a list of the repository by opwning its `URL <http://hbfswgrepo-lv1.hi.gemini.edu/repo/gembase/>`_ in a web browser. Copy the URL of the package beginning with :code:'gem-rtsw-repo' (usually somthing like *rightclick -> copy link location*) and install this repo in your virtual machine, e.g.
+
+::
+
+  sudo dnf install -y http://hbfswgrepo-lv1.hi.gemini.edu/repo/gembase/gem-rtsw-repo-3.15.8-0.1.0.20200731.git.0.9602532.el8.x86_64.rpm 
+  
+Please note that the repository is disabled by default (because it is only reachable within Gemini or being connected by VPN). To do any operations on
+this repository, always use the :code:'--enablerepo=gem-rtsw' option. Or enable it permanently with
+
+::
+
+  sudo dnf install dnf-utils -y
+  sudo dnf yum-config-manager --enable gem-rtsw
+  
+Then :code:'gem-rtsw' packages can be installed, for example
+
+::
+
+  sudo yum install epics-base-devel
+  
+To list all packages available in :code:'gem-rtsw' execute
+
+::
+
+  dnf --disablerepo=* --enablerepo=gem-rtsw list available
+  
+A complete command reference for :code:'dnf' can be found `here <https://dnf.readthedocs.io/en/latest/command_ref.html>`_.
