@@ -112,7 +112,7 @@ in the CentOS8 VM.
 The typical workflow is to 
   * clone_ a project, 
   * enter its directory and do some changes, 
-  * test to build while hopefully all dependecies_ are installed using the typical command set (for *EPICS* projects usually something like :code:`make distclean uninstall all`), 
+  * test to build while hopefully all dependencies_ are installed using the typical command set (for *EPICS* projects usually something like :code:`make distclean uninstall all`), 
   * :code:`git commit -a` those changes and 
   * :code:`tito tag` them. 
   * Then those changes could be released as *RPM* to the repository doing :code:`RSYNC_USERNAME=koji tito release gemrtsw-el8-x86_64`
