@@ -33,7 +33,7 @@ this repository, always use the :code:`--enablerepo=gem-rtsw` option. Or enable 
 ::
 
   sudo dnf install dnf-utils -y
-  sudo dnf yum-config-manager --enable gem-rtsw
+  sudo dnf config-manager --enable gem-rtsw
   
 Then :code:`gem-rtsw` packages can be installed, for example
 
@@ -42,6 +42,8 @@ Then :code:`gem-rtsw` packages can be installed, for example
   sudo dnf install epics-base-devel
   
 or, for casrotator development packages
+
+.. _depedencies:
 
 ::
 
@@ -83,6 +85,8 @@ Then the user needs to logon to gitlab, navigate to *Settings->SSH Keys* and add
 
 It is now possible to do
 
+.. _clone:
+
 ::
 
   git clone git@gitlab.gemini.edu:rtsw/support/<project name>.git
@@ -97,10 +101,22 @@ and afterwards any other git operation on those projects without having to enter
 
 Using tito to Build and Deploy RPMs
 -----------------------------------
-In Gemini's test environment :code:`tito` is used to build and deploy RPMs to the `testing RPM repository`_. It can be installed by
+In Gemini's test environment :code:`tito` (documentation to be found `here <https://github.com/rpm-software-management/tito>`_) is used to build and deploy RPMs to the `testing RPM repository`_. It can be installed by
 
 ::
 
   sudo dnf install -y tito
   
 in the CentOS8 VM.
+
+The typical workflow is to 
+  * clone_ a project, 
+  * enter its directory and do some changes, 
+  * test to build while hopefully all dependecies_ are installed using the typical command set (for *EPICS* projects usually something like :code:`make distclean uninstall all`), 
+  * :code:`git commit -a` those changes and 
+  * :code:`tito tag` them. 
+  * Then those changes could be released as *RPM* to the repository doing :code:`RSYNC_USERNAME=koji tito release gemrtsw-el8-x86_64`
+  
+
+
+  
