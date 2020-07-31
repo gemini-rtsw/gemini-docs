@@ -1,0 +1,3 @@
+[submodule "gemini-docs-submodule"]
+	path = gemini-docs-submodule
+	url = https://github.com/gemini-rtsw/gemini-docs-submodule.git
