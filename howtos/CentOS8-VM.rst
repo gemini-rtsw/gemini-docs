@@ -13,7 +13,7 @@ Network Connection
 ------------------
 Unfortunately, right now there doesn't exist a Cisco-VPN solution for CentOS-8 which works with Gemini's. NetworkManager-vpnc is apparently not yet built for
 CentOS-8.
-To work around this issue in the VM's network settings activate *NAT* and in the *Advanced* section set the aapter type to 
-*Paravirtualized Network (virtio-net)*. Then VPN connection to Gemini can be activated on the host system. Reconnect you virtual network and the host system's
-VPN connection should be accasible from within the guest system now.
+To work around this issue in the VM's network settings activate *NAT* and in the *Advanced* section set the adapter type to 
+*Paravirtualized Network (virtio-net)*. Then VPN connection to Gemini can be activated on the host system. Reconnect your virtual network and the host system's
+VPN connection should be accessible from within the guest system now.
 
