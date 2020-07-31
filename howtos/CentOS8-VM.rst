@@ -17,6 +17,8 @@ To work around this issue in the VM's network settings activate *NAT* and in the
 *Paravirtualized Network (virtio-net)*. Then VPN connection to Gemini can be activated on the host system. Reconnect your virtual network and the host system's
 VPN connection should be accessible from within the guest system now.
 
+.. _testing RPM repository:
+
 Gemini's RTSWG RPM Repository
 -----------------------------
 Having activated the VPN connection to or being located within HBF facility, you can ouput a list of the repository by opening its `URL <http://hbfswgrepo-lv1.hi.gemini.edu/repo/gembase/>`_ in a web browser. Copy the URL of the package beginning with :code:`gem-rtsw-repo` (usually somthing like *rightclick -> copy link location*) and install this repo in your virtual machine, e.g.
@@ -95,7 +97,7 @@ and afterwards any other git operation on those projects without having to enter
 
 Using tito to Build and Deploy RPMs
 -----------------------------------
-In Gemini's test environment :code:`tito` is used to build and deploy RPMs to the `testing RPM repository <Gemini's RTSWG RPM Repository>`_. It can be installed by
+In Gemini's test environment :code:`tito` is used to build and deploy RPMs to the `testing RPM repository`_. It can be installed by
 
 ::
 
