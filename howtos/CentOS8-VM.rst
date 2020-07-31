@@ -43,7 +43,7 @@ Then :code:`gem-rtsw` packages can be installed, for example
   
 or, for casrotator development packages
 
-.. _depedencies:
+.. _dependencies:
 
 ::
 
