@@ -21,6 +21,14 @@ VPN connection should be accessible from within the guest system now.
 
 Gemini's RTSWG RPM Repository
 -----------------------------
+First, id needs to be made sure that :code:`epel` and :code:`powertools` RPM repositories are installed and enabled:
+
+::
+
+  sudo dnf -y install dnf-plugins-core
+  sudo dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+  sudo dnf config-manager --set-enabled PowerTools
+  
 Having activated the VPN connection to or being located within HBF facility, you can ouput a list of the repository by opening its `URL <http://hbfswgrepo-lv1.hi.gemini.edu/repo/gembase/>`_ in a web browser. Copy the URL of the package beginning with :code:`gem-rtsw-repo` (usually somthing like *rightclick -> copy link location*) and install this repo in your virtual machine, e.g.
 
 ::
