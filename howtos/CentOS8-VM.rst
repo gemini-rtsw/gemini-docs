@@ -57,6 +57,12 @@ To list all packages available in :code:`gem-rtsw` execute
 
   dnf --disablerepo=* --enablerepo=gem-rtsw list available
   
+If the RPM repository was updated recently (e.g. with a RPM that has just been deployed) it is a good idea to update to update the local cache of repository information:
+
+::
+
+  sudo dnf makecache
+  
 A complete command reference for :code:`dnf` can be found `here <https://dnf.readthedocs.io/en/latest/command_ref.html>`_.
 
 Gemini's gitlab Repository
@@ -64,6 +70,8 @@ Gemini's gitlab Repository
 The group :code:`rtsw` within Gemini's gitlab repository is located at `https://gitlab.gemini.edu/rtsw <https://gitlab.gemini.edu/rtsw>`_. Geminites should be able to login with their LDAP credentials.
 
 The :code:`crcs_mk` ioc module is located in the :code:`ioc` subgroup. All dependencies are locatet in the :code:`support` subgroup.
+
+.. _`ssh public key`:
 
 Clone Project Using SSH Public Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -101,13 +109,14 @@ and afterwards any other git operation on those projects without having to enter
 
 Using tito to Build and Deploy RPMs
 -----------------------------------
-In Gemini's test environment :code:`tito` (documentation to be found `here <https://github.com/rpm-software-management/tito>`_) is used to build and deploy RPMs to the `testing RPM repository`_. It can be installed by
+In Gemini's test environment :code:`tito` (documentation to be found `here <https://github.com/rpm-software-management/tito>`_) is used to build and deploy RPMs to the `testing RPM repository`_. It can be installed implicitly (together with Gemini-specific config files) by
 
 ::
 
-  sudo dnf install -y tito
+  sudo dnf install -y gemini-ade
   
-in the CentOS8 VM.
+  
+in the CentOS8 VM. This package is also a dependecy of :code:`epics-base-devel` and all other devel packages for epics modules from Gemini's RPM repository.
 
 The typical workflow is to 
   * clone_ a project, 
@@ -117,6 +126,6 @@ The typical workflow is to
   * :code:`tito tag` them. 
   * Then those changes could be released as *RPM* to the repository doing :code:`RSYNC_USERNAME=koji tito release gemrtsw-el8-x86_64`
   
-
+.. note:: The public ssh key (usually :code:`~/ssh.id_rsa.pub`, see `ssh public key`_) has to be added to the :code:`authorized_keys` of the :code:`koji` user at Gemini's RPM repository machine. Please post your public key to Matt at gemini-software.slack.com with a request to be added to those.
 
   
