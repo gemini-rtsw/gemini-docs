@@ -115,6 +115,34 @@ or
   
 and afterwards any other git operation on those projects without having to enter user credentials.
 
+Set upstream for vendor modules
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A bunch of *EPICS* modules is managed on `github <https://github.com/epics-modules>`_. These can be set to be *upstream* by adding their URL to the respective project's git configuration. This way it is always possible to merge the newest changes from *upstream* into Gemini's sources to be up to date. Please read `this <https://www.atlassian.com/git/tutorials/git-forks-and-upstreams>`_ for a short and good overview how things work regarding this.
+
+In our setup we might have unrelated hostories of development. This means that an appropriate flag needs to be set when merging from upstream:
+
+::
+
+  git merge --allow-unrelated-history upstream/master
+
+Merging would lead to conflicts which would have to be resolved manually. In some cases (like :code:`adl` files) this might me very straight forward and it's safe to use upstream's version, which cold be achieved by:
+
+::
+
+  git checkout --theirs <path/to/file>
+  
+In all other cases it's mandatory to resolve the conflict manually by opening the respective file(s) in your favorite editor and look for lines characterized by:
+
+::
+  
+  <<<<<<< HEAD
+  <your stuff here>
+  =======
+  <upstream's stuff here>
+  >>>>>>> upstream/master
+
+
+
 Using tito to Build and Deploy RPMs
 -----------------------------------
 In Gemini's test environment :code:`tito` (documentation to be found `here <https://github.com/rpm-software-management/tito>`_) is used to build and deploy RPMs to the `testing RPM repository`_. It can be installed implicitly (together with Gemini-specific config files) by
