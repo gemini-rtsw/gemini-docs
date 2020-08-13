@@ -19,6 +19,12 @@ VPN connection should be accessible from within the guest system now.
 
 .. _testing RPM repository:
 
+
+Building and Releasing RPMs from git
+====================================
+
+It is assumed that the following takes place on a *CentOS 8* machine. To set up one in a virtual environment, see `Using CentOS8 in VirtualBox`_.
+
 Gemini's RTSWG RPM Repository
 -----------------------------
 First, id needs to be made sure that :code:`epel` and :code:`powertools` RPM repositories are installed and enabled:
