@@ -11,11 +11,22 @@ sure to use the current version of *VirtualBox*.
 
 Network Connection
 ------------------
-Unfortunately, right now there doesn't exist a Cisco-VPN solution for CentOS-8 which works with Gemini's. NetworkManager-vpnc is apparently not yet built for
-CentOS-8.
-To work around this issue in the VM's network settings activate *NAT* and in the *Advanced* section set the adapter type to 
-*Paravirtualized Network (virtio-net)*. Then VPN connection to Gemini can be activated on the host system. Reconnect your virtual network and the host system's
-VPN connection should be accessible from within the guest system now.
+There do exist two methods to activate VPN connection to Gemini, the second one is the recommended one since it is considered more performant:
+
+Connecting through the host's OS' VPN connection
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In the VM's network settings activate *NAT* and in the *Advanced* section set the adapter type to *Paravirtualized Network (virtio-net)*. Then VPN connection to Gemini can be activated on the host system. Reconnect your virtual network and the host system's VPN connection should be accessible from within the guest system now.
+
+Connecting though OpenConnect-Compatible VPN connection
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Before booting the VM, configure the Network to be *NAT* or *Bridged*, but not *paravirtualized*. The NIC should be configured as normal Hardware like *Intel PRO/1000 MT Desktop*
+* After booting CentOS 8, make sure you log in with the default *Standard (Wayland display server)* which is *Gnome*-based or *Plasma* 
+* Install OpenConnect: :code:`sudo dnf install NetworkManager-openconnect NetworkManager-openconnect-gnome -y` for *Gnome* and/or :code:`sudo dnf install NetworkManager-openconnect plasma-nm-openconnect -y` for *Plasma*
+* Reboot
+* Log in again with the *Standard* display server or *Plasma*
+* Configure a new VPN connection, where you only specify the *Protocol* to be *Cisco AnyConnect* and the *Gateway* to be :code:`hbfvpn2.gemini.edu`
+* Another reboot may be needed
+* Activate the VPN connection just created. Under *Plasma*, make sure to press the button with the *connect* symbol near the gateway URL in the popup dialog showing up. You will be asked for your login credentials which is the user's Gemini LDAP credentials in the :code:`STAFF` group. 
 
 .. _testing RPM repository:
 
