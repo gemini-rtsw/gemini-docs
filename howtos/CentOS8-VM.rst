@@ -132,15 +132,18 @@ or
   
 and afterwards any other git operation on those projects without having to enter user credentials.
 
+
 Set upstream for vendor modules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Introduction
+""""""""""""
 A bunch of *EPICS* modules is managed on `github <https://github.com/epics-modules>`_. These can be set to be *upstream* by adding their URL to the respective project's git configuration. This way it is always possible to merge the newest changes from *upstream* into Gemini's sources to be up to date. Please read `this <https://www.atlassian.com/git/tutorials/git-forks-and-upstreams>`_ for a short and good overview how things work regarding this.
 
 In our setup we might have unrelated hostories of development. This means that an appropriate flag needs to be set when merging from upstream:
 
 ::
 
-  git merge --allow-unrelated-history upstream/master
+  git merge --allow-unrelated-histories upstream/master
 
 Merging would lead to conflicts which would have to be resolved manually. In some cases (like :code:`adl` files) this might me very straight forward and it's safe to use upstream's version, which cold be achieved by:
 
@@ -158,7 +161,86 @@ In all other cases it's mandatory to resolve the conflict manually by opening th
   <upstream's stuff here>
   >>>>>>> upstream/master
 
+Example Workflow
+""""""""""""""""
+Putting all together, a example workflow for the *EPICS* module :code:`autosave` to merge upstream sources into the existing git repo is depicted in the
+following. 
 
+* First, make sure local :code:`master` is up to date:
+
+  ::
+
+    git checkout master
+    git pull
+  
+* check for exisiting remotes:
+  
+  ::
+  
+    $ git remote -v
+    origin  git@gitlab.gemini.edu:rtsw/support/autosave.git (fetch)
+    origin  git@gitlab.gemini.edu:rtsw/support/autosave.git (push)
+
+* add the upstream (i.e. vendor) URL and check that everything worked well:
+
+  ::
+  
+    $ git remote add upstream https://github.com/epics-modules/autosave
+    $ git remote -v
+    origin  git@gitlab.gemini.edu:rtsw/support/autosave.git (fetch)
+    origin  git@gitlab.gemini.edu:rtsw/support/autosave.git (push)
+    upstream        https://github.com/epics-modules/autosave (fetch)
+    upstream        https://github.com/epics-modules/autosave (push)
+
+* branch off from master to a new working branch:
+
+  ::
+  
+    git checkout -b vendor-code
+    
+* fetch the latest changes from upstream
+
+  ::
+  
+    git fetch upstream
+    
+* now upstream's master needs to be merged into the branch just created:
+
+  ::
+  
+    git merge upstream/master
+    
+  If this results in an error message :code:`fatal: refusing to merge unrelated histories` the flag mentioned above needs to be set (and some conflicts forseen
+  
+  ::
+    
+    $ git merge --allow-unrelated-histories upstream/master
+    Auto-merging documentation/autosaveReleaseNotes.html
+    CONFLICT (add/add): Merge conflict in documentation/autosaveReleaseNotes.html
+    Auto-merging configure/RELEASE
+    CONFLICT (add/add): Merge conflict in configure/RELEASE
+    Auto-merging asApp/src/save_restore.c
+    CONFLICT (add/add): Merge conflict in asApp/src/save_restore.c
+    Auto-merging asApp/src/dbrestore.c
+    CONFLICT (add/add): Merge conflict in asApp/src/dbrestore.c
+    [ ... many more ... ]
+    
+ * Now the work begins and all conflict need to be resolved manually or with the :code:`--theirs` or :code:`--ours` option to :code:`git checkout <filename>`, 
+   but only if absolutely certain which version to take
+   
+ * If the conflicts where resolved, commit the changes by :code:`git commit -a`
+ 
+ * To tag the respective branch for a new tito release :code:`tito tag` needs to be called followed by :code:`git push -u --follow-tags origin vendor-code`
+ 
+ * To try things out a RPM for a testing repo (and only for this one) could be deployed by 
+ 
+  ::
+    
+    RSYNC_USERNAME=koji tito release gemrtsw-el8-x86_64
+    
+  It is advised to rebuild RPMs for all packages having this one (:code:`autosave` in this case) as dependency in this testing repo
+    
+ * If everything work well file a merge request for the branch :code:`vendor-code` to be merged into :code:`master`.
 
 Using tito to Build and Deploy RPMs
 -----------------------------------
@@ -167,7 +249,6 @@ In Gemini's test environment :code:`tito` (documentation to be found `here <http
 ::
 
   sudo dnf install -y gemini-ade
-  
   
 in the CentOS8 VM. This package is also a dependecy of :code:`epics-base-devel` and all other devel packages for epics modules from Gemini's RPM repository.
 
