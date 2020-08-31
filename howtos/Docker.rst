@@ -1,5 +1,5 @@
-Using Docker/Podman for existing ADE
-====================================
+Using Docker/Podman 
+===================
 
 Introduction
 ------------
@@ -7,17 +7,19 @@ Citing `wikipedia <https://en.wikipedia.org/wiki/Docker_%28software%29>`_, "dock
 
 This lets docker and similar approaches like podman be a good solution for various tasks in the new ADE generation, presumably.
 
+ADE version 1.x
+---------------
 Setup
------
+^^^^^
 Installation
-^^^^^^^^^^^^
+************
 For exact installation instructions refer to descriptions of the host operating system. One of the advantages of the usage of docker is namely the fact, that docker containers work abstracted from the host OS. Note in this context that podman is syntax-compatible to docker, so if prodman is (or will be) preferred, substitute :code:`docker` with :code:`podman` in the following. I made the experience, though, that - at least under Ubuntu - podman needs quite long (several dozens of seconds) to start up, while docker starts execution almost immediately. Further investigation is needed here, because conceptwise, podman seems to be much safer and convincing, as no root level service is needed to manage image execution and associated actions; however, running
 containers as non-root seems to be a bit complicated. If :code:`podman` is used, it might be that the respecitve commands
 need to be prepended by :code:`sudo` to execute them in at root level nevertheless. A solution for the experienced problems
 which are probably resulting from a incomplete setup will be provided once the new ADE goes into production.
 
 Definition
-^^^^^^^^^^
+**********
 A `Dockerfile <https://docs.docker.com/engine/reference/builder/>`_ is used to automatically create a docker image from a ASCII text file. The following one for initial tests was used to create an image (:code:`centos7` with tag :code:`ADE`) based on the current ADE - which is copied over to the image  at creation time with all necessary tools and EPICS modules readily installed - and a centos7 base image distributed via `dockerhub <https://hub.docker.com/_/centos>`_:
 
 ::
@@ -48,14 +50,14 @@ A `Dockerfile <https://docs.docker.com/engine/reference/builder/>`_ is used to a
   CMD ["/bin/bash"]
 
 Building
-^^^^^^^^
+********
 A docker image can be `built <https://docs.docker.com/engine/reference/commandline/build/>`_ in the directory where the Dockerfile resides, for example by executing the command:
 ::
 
   docker build -t centos7:ADE .
   
 Usage
------
+^^^^^
 The docker image is now known by your docker platform and can be used. One example is of course, to use it to build a IOC module with the ADE installed in this docker image, with the sources not residing in the docker image, but on your host file system. With the following command, the gcal ioc modules was built with its code at :code:`$PWD/gcal` mounted into the docker image at startup time and hence shared between host and guest OS:
 ::
   
@@ -69,13 +71,13 @@ To simply get a :code:`bash` to do things more interactively on this project you
 Please refer to the respective `documentation <https://docs.docker.com/engine/reference/run/>`_ for a reference of the various parameters used with these commands. 
 
 Hosting Image on a Registry
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Apart from `dockerhub <https://hub.docker.com/_/centos>`_, the ready built images can be hosted on an own socalled `registry <https://docs.docker.com/registry/>`_. In Gemini's context, this could ensure a well-defined build environment which could be used locally to develop with ADE and to deploy RPMs, for example, after building a local image derived from the base image provided via that registry. Like :code:`centos:7` in the given example, a self-created image could be used as base for various images with specific tasks in Gemini's development environment. 
 
-The Future ADE
-==============
+Running RTMES in ADE
+--------------------
 Introduction
-------------
+^^^^^^^^^^^^
 
 For the future ADE there are plans to use a environment based on :code:`mock` to create RPMs pushed to the RPM repository in an fully automated manner after creating a tag for the respective sources managed in :code:`git`. Since this new ADE will be hosted
 on a CentOS8 machine, :code:`podman` will be used to manage respective containers which will be used by :code:`mock` to bootstrap
@@ -83,9 +85,9 @@ its :code:`chroot` environments. We use podman containers as a base because it i
 which is build using a very unstandardized and static build process.
 
 Setup
------
+^^^^^
 Installation
-^^^^^^^^^^^^
+************
 :code:`podman` has to be installed to the CentOS8 environment.
 
 ::
@@ -95,7 +97,7 @@ Installation
 Please note that the containers use quite some space on the drive. It is advised to have some 100GB storage for :code:`/va/lib/containers` available, maybe an extra poartition with this size.
 
 Definition
-^^^^^^^^^^
+**********
 The current :code:`Containerfile` is availbale under :code:`git@gitlab.gemini.edu:rtsw/containers.git`. Its content looks similar to the 
 following:
 
@@ -195,7 +197,7 @@ following:
 It contains a manual :code:`RTEMS` installation and the Gemini RPM repository information.
 
 Building
-^^^^^^^^
+********
 Comparable to the :code:`docker` documentation mentioned above, this image can be built from the directory where :conde:`Containerfile` is located by
 
 ::
@@ -205,7 +207,7 @@ Comparable to the :code:`docker` documentation mentioned above, this image can b
 
 
 Create Container Registry
-^^^^^^^^^^^^^^^^^^^^^^^^^
+*************************
 :code:`mock` needs to pull its containers from a registry. For our purpose, a private one hosted via podman itself will fit our
 needs.
 

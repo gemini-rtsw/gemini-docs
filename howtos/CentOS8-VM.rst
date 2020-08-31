@@ -1,24 +1,23 @@
+ADE version 2
+=============
+
 Using CentOS8 in VirtualBox
-======================================
+---------------------------
 `VirtualBox <https://www.virtualbox.org/>`_ is a virtualization product to emulate a whole PC. Within this, a operating system like *CentOS-8* can be installed
 like on a 'normal' computer. *VirtualBox* is available for Windows-, MacOS- and Linux-based host operating systems.
 
 Installation of Guest Operating System CentOS-8
------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 CentOS-8 (as well as other operating systems) is installed by 'virtually' inserting the iso-image downloaded as a virtual CD into the virtual drive. This
 is done in the *storage* settings of the virtual machine, which has beed created before. Virtual Hard Disk space of about 30GB should be sufficient. Always make
 sure to use the current version of *VirtualBox*.
 
 Network Connection
-------------------
+^^^^^^^^^^^^^^^^^^
 There do exist two methods to activate VPN connection to Gemini, the second one is the recommended one since it is considered more performant:
 
-Connecting through the host's OS' VPN connection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In the VM's network settings activate *NAT* and in the *Advanced* section set the adapter type to *Paravirtualized Network (virtio-net)*. Then VPN connection to Gemini can be activated on the host system. Reconnect your virtual network and the host system's VPN connection should be accessible from within the guest system now.
-
 Connecting though OpenConnect-Compatible VPN connection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*******************************************************
 * Before booting the VM, configure the Network to be *NAT* or *Bridged*, but not *paravirtualized*. The NIC should be configured as normal Hardware like *Intel PRO/1000 MT Desktop*
 * After booting CentOS 8, make sure you log in with the default *Standard (Wayland display server)* which is *Gnome*-based or *Plasma* 
 * Install OpenConnect: :code:`sudo dnf install NetworkManager-openconnect NetworkManager-openconnect-gnome -y` for *Gnome* and/or :code:`sudo dnf install NetworkManager-openconnect plasma-nm-openconnect -y` for *Plasma*
@@ -28,16 +27,20 @@ Connecting though OpenConnect-Compatible VPN connection
 * Another reboot may be needed
 * Activate the VPN connection just created. Under *Plasma*, make sure to press the button with the *connect* symbol near the gateway URL in the popup dialog showing up. You will be asked for your login credentials which is the user's Gemini LDAP credentials in the :code:`STAFF` group. 
 
+Connecting through the host's OS' VPN connection
+************************************************
+In the VM's network settings activate *NAT* and in the *Advanced* section set the adapter type to *Paravirtualized Network (virtio-net)*. Then VPN connection to Gemini can be activated on the host system. Reconnect your virtual network and the host system's VPN connection should be accessible from within the guest system now.
+
 .. _testing RPM repository:
 
 
 Building and Releasing RPMs from git
-====================================
+------------------------------------
 
 It is assumed that the following takes place on a *CentOS 8* machine. To set up one in a virtual environment, see `Using CentOS8 in VirtualBox`_.
 
 Gemini's RTSWG RPM Repository
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 First, id needs to be made sure that :code:`epel` and :code:`powertools` RPM repositories are installed and enabled:
 
 ::
@@ -91,7 +94,7 @@ If the RPM repository was updated recently (e.g. with a RPM that has just been d
 A complete command reference for :code:`dnf` can be found `here <https://dnf.readthedocs.io/en/latest/command_ref.html>`_.
 
 Gemini's gitlab Repository
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The group :code:`rtsw` within Gemini's gitlab repository is located at `https://gitlab.gemini.edu/rtsw <https://gitlab.gemini.edu/rtsw>`_. Geminites should be able to login with their LDAP credentials.
 
 The :code:`crcs_mk` ioc module is located in the :code:`ioc` subgroup. All dependencies are locatet in the :code:`support` subgroup.
@@ -99,7 +102,7 @@ The :code:`crcs_mk` ioc module is located in the :code:`ioc` subgroup. All depen
 .. _`ssh public key`:
 
 Clone Project Using SSH Public Key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+***********************************
 To be able to clone a gitlab project with a SSH key, it first has to be made sure one exists on your local CentOS8 virtual machine. Open a terminal and 
 
 ::
@@ -134,9 +137,9 @@ and afterwards any other git operation on those projects without having to enter
 
 
 Set upstream for vendor modules
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*******************************
 Introduction
-""""""""""""
+++++++++++++
 A bunch of *EPICS* modules is managed on `github <https://github.com/epics-modules>`_. These can be set to be *upstream* by adding their URL to the respective project's git configuration. This way it is always possible to merge the newest changes from *upstream* into Gemini's sources to be up to date. Please read `this <https://www.atlassian.com/git/tutorials/git-forks-and-upstreams>`_ for a short and good overview how things work regarding this.
 
 In our setup we might have unrelated hostories of development. This means that an appropriate flag needs to be set when merging from upstream:
@@ -162,7 +165,7 @@ In all other cases it's mandatory to resolve the conflict manually by opening th
   >>>>>>> upstream/master
 
 Example Workflow
-""""""""""""""""
+++++++++++++++++
 Putting all together, a example workflow for the *EPICS* module :code:`autosave` to merge upstream sources into the existing git repo is depicted in the
 following. 
 
@@ -243,7 +246,7 @@ following.
 * If everything work well file a merge request for the branch :code:`vendor-code` to be merged into :code:`master`.
 
 Using tito to Build and Deploy RPMs
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In Gemini's test environment :code:`tito` (documentation to be found `here <https://github.com/rpm-software-management/tito>`_) is used to build and deploy RPMs to the `testing RPM repository`_. It can be installed implicitly (together with Gemini-specific config files) by
 
 ::
@@ -251,6 +254,13 @@ In Gemini's test environment :code:`tito` (documentation to be found `here <http
   sudo dnf install -y gemini-ade
   
 in the CentOS8 VM. This package is also a dependecy of :code:`epics-base-devel` and all other devel packages for epics modules from Gemini's RPM repository.
+
+After that, it needs to be ensured that the developer is in the :code:`mock`
+group:
+
+::
+
+  sudo usermod -aG mock <developer's username>
 
 The typical workflow is to 
   * clone_ a project, 
