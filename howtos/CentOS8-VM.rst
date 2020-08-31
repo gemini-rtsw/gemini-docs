@@ -225,14 +225,14 @@ following.
     CONFLICT (add/add): Merge conflict in asApp/src/dbrestore.c
     [ ... many more ... ]
     
- * Now the work begins and all conflict need to be resolved manually or with the :code:`--theirs` or :code:`--ours` option to :code:`git checkout <filename>`, 
+* Now the work begins and all conflict need to be resolved manually or with the :code:`--theirs` or :code:`--ours` option to :code:`git checkout <filename>`, 
    but only if absolutely certain which version to take
    
- * If the conflicts where resolved, commit the changes by :code:`git commit -a`
+* If the conflicts where resolved, commit the changes by :code:`git commit -a`
  
- * To tag the respective branch for a new tito release :code:`tito tag` needs to be called followed by :code:`git push -u --follow-tags origin vendor-code`
+* To tag the respective branch for a new tito release :code:`tito tag` needs to be called followed by :code:`git push -u --follow-tags origin vendor-code`
  
- * To try things out a RPM for a testing repo (and only for this one) could be deployed by 
+* To try things out a RPM for a testing repo (and only for this one) could be deployed by 
  
   ::
     
@@ -240,7 +240,7 @@ following.
     
   It is advised to rebuild RPMs for all packages having this one (:code:`autosave` in this case) as dependency in this testing repo
     
- * If everything work well file a merge request for the branch :code:`vendor-code` to be merged into :code:`master`.
+* If everything work well file a merge request for the branch :code:`vendor-code` to be merged into :code:`master`.
 
 Using tito to Build and Deploy RPMs
 -----------------------------------
