@@ -1,8 +1,8 @@
 ADE version 2
 =============
 
-Using CentOS8 in VirtualBox
----------------------------
+Using CentOS8 in VirtualBox for ADEv2
+-------------------------------------
 `VirtualBox <https://www.virtualbox.org/>`_ is a virtualization product to emulate a whole PC. Within this, a operating system like *CentOS-8* can be installed
 like on a 'normal' computer. *VirtualBox* is available for Windows-, MacOS- and Linux-based host operating systems.
 
