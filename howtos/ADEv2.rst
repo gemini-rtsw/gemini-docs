@@ -14,7 +14,7 @@ sure to use the current version of *VirtualBox*.
 
 Network Connection
 ^^^^^^^^^^^^^^^^^^
-There do exist two methods to activate VPN connection to Gemini, the second one is the recommended one since it is considered more performant:
+There do exist two methods to activate VPN connection to Gemini, the first one is the recommended one since it is considered more performant:
 
 Connecting though OpenConnect-Compatible VPN connection
 *******************************************************
