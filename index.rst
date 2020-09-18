@@ -30,7 +30,7 @@ Gemini Real-Time Controls Documentation
    Read-The-Docs Quick Start <howtos/RTD-Quick-Start>
 
 
- `Bancom <https://bancomm.readthedocs.io/en/latest/>`_
+`Bancom <https://bancomm.readthedocs.io/en/latest/>`_
 
 .. toctree::
    :maxdepth: 1
