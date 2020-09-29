@@ -1,4 +1,4 @@
-Quick Start Guide
+RTD Quick Start Guide
 =================
 
 Convert docs to rst or write rst
